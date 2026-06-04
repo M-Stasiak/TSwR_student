@@ -2,7 +2,7 @@ import numpy as np
 
 
 class ManiuplatorModel:
-    def __init__(self, Tp):
+    def __init__(self, Tp, m3=0.7, r3=0.05):
         self.Tp = Tp
         self.l1 = 0.5
         self.r1 = 0.04
@@ -12,8 +12,8 @@ class ManiuplatorModel:
         self.r2 = 0.04
         self.m2 = 2.4
 
-        self.m3 = 0.7
-        self.r3 = 0.05
+        self.m3 = m3
+        self.r3 = r3
 
         self.I_1 = 1 / 12 * self.m1 * (3 * self.r1 ** 2 + self.l1 ** 2)
         self.I_2 = 1 / 12 * self.m2 * (3 * self.r2 ** 2 + self.l2 ** 2)
