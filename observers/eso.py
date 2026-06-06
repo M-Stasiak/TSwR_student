@@ -19,5 +19,9 @@ class ESO:
         self.states.append(copy(self.state))
         ### TODO implement ESO update
 
+        z_hat = self.state
+        z_hat_dot = self.A @ z_hat + self.B @ u + self.L @ (q - self.W @ z_hat)
+        self.state = self.state + self.Tp * z_hat_dot
+        
     def get_state(self):
         return self.state
